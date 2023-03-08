@@ -1,5 +1,9 @@
+import logging
+
 import pandas as pd
 import credentials as cred
+import requests
+
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
@@ -8,13 +12,12 @@ def runWithoutClosing():
         pass
 
 def main():
+    #start the session
 
-    driver = webdriver.Chrome(
-        executable_path='/Users/hernancedillo/Documents/GitHubLocalRepo/WebScrapingGrades/venv/chromeDriver/chromedriver')
-    driver.get('https://oxylabs.io/blog')
-    usernameCred = cred.username
-    passwordCred = cred.password
-    runWithoutClosing()
+    session = requests.Session()
+    print('testing')
+
+
 
 
 if __name__ == "__main__":
